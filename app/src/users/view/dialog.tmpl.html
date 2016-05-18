@@ -75,11 +75,13 @@
             <br/>
         </div>   -->
 
-
-
-
       </form>
     </div>
+
+    <div ng-controller="FormController">
+        <form sf-schema="schema" sf-form="form" sf-model="model"></form>
+    </div>    
+
   </md-dialog-content>
   <md-dialog-actions>
     <md-button aria-label="Finished"  ng-click="ctrl.finish($event)">Finished
