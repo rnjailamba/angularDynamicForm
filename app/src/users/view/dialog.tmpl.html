@@ -164,6 +164,22 @@
         </md-content>
       </md-tab>
 
+      <md-tab label="DateSelect">
+        <md-content class="md-padding">
+
+          <div ng-controller="FormController6">
+              <form name="myForm6"
+                    sf-schema="schema"
+                    sf-form="form"
+                    sf-model="model6"
+                    ng-submit="onSubmit(myForm6)"></form>
+              <div ng-show="myForm6.$valid" class=""><em>Form is valid</em></div>
+              <div ng-show="myForm6.$invalid" class="ng-hide"><em>Form is not valid</em></div>
+              <pre >{{model6}}</pre>
+          </div>
+        </md-content>
+      </md-tab>
+
     </md-tabs>
   </md-dialog-content>
   <md-dialog-actions>
