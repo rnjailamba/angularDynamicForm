@@ -132,6 +132,22 @@
         </md-content>
       </md-tab>
 
+      <md-tab label="BootstrapGrid">
+        <md-content class="md-padding">
+
+          <div ng-controller="FormController4">
+              <form name="myForm4"
+                    sf-schema="schema"
+                    sf-form="form"
+                    sf-model="model4"
+                    ng-submit="onSubmit(myForm4)"></form>
+              <div ng-show="myForm4.$valid" class=""><em>Form is valid</em></div>
+              <div ng-show="myForm4.$invalid" class="ng-hide"><em>Form is not valid</em></div>
+              <pre >{{model4}}</pre>
+          </div>
+        </md-content>
+      </md-tab>
+
     </md-tabs>
   </md-dialog-content>
   <md-dialog-actions>
