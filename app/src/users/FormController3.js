@@ -1,26 +1,40 @@
 angular.module('starterApp')
        .controller('FormController3', FormController3);
 function FormController3($scope) {
-  $scope.schema = {
-    type: "object",
-    properties: {
-      name: { type: "string", minLength: 2, title: "Name", description: "Name or alias" },
-      title: {
-        type: "string",
-        enum: ['dr','jr','sir','mrs','mr','NaN','dj']
-      }
-    }
-  };
+  $scope.schema =
+                {
+                  "type": "object",
+                  "title": "Types",
+                  "properties": {
+                    "string": {
+                      "type": "string",
+                      "minLength": 3
+                    },
+                    "integer": {
+                      "type": "integer"
+                    },
+                    "number": {
+                      "type": "number"
+                    },
+                    "boolean": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ]
+                };
 
-  $scope.form = [
-    "*",
-    {
-      type: "submit",
-      title: "Save"
-    }
-  ];
+  $scope.form =
+                [
+                  "*",
+                  {
+                    "type": "submit",
+                    "title": "OK"
+                  }
+                ];
 
-  $scope.model = {};
+  $scope.modell = {};
 
   $scope.onSubmit = function(form) {
     // First we broadcast an event so all fields validate themselves
@@ -31,6 +45,8 @@ function FormController3($scope) {
     if (form.$valid) {
       // ... do whatever you need to do with your data.
       console.log("form is valid");
+      console.log('Current model', $scope.modell);
+
 
     }
     else{
