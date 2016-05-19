@@ -104,6 +104,18 @@
         </md-content>
       </md-tab>
 
+      <md-tab label="Simple">
+        <md-content class="md-padding has-feedback">
+          <div ng-controller="FormController2">
+              <form name="myForm"
+                    sf-schema="schema"
+                    sf-form="form"
+                    sf-model="model"
+                    ng-submit="onSubmit(myForm)"></form>
+          </div>
+        </md-content>
+      </md-tab>
+
     </md-tabs>
   </md-dialog-content>
   <md-dialog-actions>
