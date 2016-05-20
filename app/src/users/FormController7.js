@@ -1,26 +1,76 @@
 angular.module('starterApp')
        .controller('FormController7', FormController7);
 function FormController7($scope) {
+
+
   $scope.schema = {
-    type: "object",
-    properties: {
-      name: { type: "string", minLength: 2, title: "Name", description: "Name or alias" },
-      title: {
-        type: "string",
-        enum: ['dr','jr','sir','mrs','mr','NaN','dj']
-      }
-    }
-  };
+     "type": "object",
+     "title": "Album",
+     "properties": {
+       "image": {
+         "title": "Image",
+         "type": "array",
+         "format": "singlefile",
+         "x-schema-form": {
+           "type": "array"
+         },
+         "pattern": {
+           "mimeType": "image/*",
+           "validationMessage": "Falscher Dateityp: "
+         },
+         "maxSize": {
+           "maximum": "2MB",
+           "validationMessage": "Erlaubte Dateigröße überschritten: ",
+           "validationMessage2": "Aktuelle Dateigröße: "
+         },
+         "maxItems": {
+           "validationMessage": "Es wurden mehr Dateien hochgeladen als erlaubt."
+         },
+         "minItems": {
+           "validationMessage": "Sie müssen mindestens eine Datei hochladen"
+         }
+       },
+       "images": {
+         "title": "Images",
+         "type": "array",
+         "format": "multifile",
+         "x-schema-form": {
+           "type": "array"
+         },
+         "pattern": {
+           "mimeType": "image/*,!.gif",
+           "validationMessage": "Falscher Dateityp: "
+         },
+         "maxSize": {
+           "maximum": "2MB",
+           "validationMessage": "Erlaubte Dateigröße überschritten: ",
+           "validationMessage2": "Aktuelle Dateigröße: "
+         },
+         "maxItems": {
+           "validationMessage": "Es wurden mehr Dateien hochgeladen als erlaubt."
+         },
+         "minItems": {
+           "validationMessage": "Sie müssen mindestens eine Datei hochladen"
+         }
+       }
+     },
+     "required": [
+       "images"
+     ]
+   };
 
-  $scope.form = [
-    "*",
-    {
-      type: "submit",
-      title: "Save"
-    }
-  ];
+   $scope.form = [
+   {
+     "key": "image",
+     "type": "nwpFileUpload",
+     "endpoint": "https://angular-file-upload-cors-srv.appspot.com/upload"
+   }, {
+     "key": "images",
+     "type": "nwpFileUpload",
+     "endpoint": "https://angular-file-upload-cors-srv.appspot.com/upload"
+   }];
 
-  $scope.model = {};
+  $scope.model7 = {};
 
   $scope.onSubmit = function(form) {
     // First we broadcast an event so all fields validate themselves

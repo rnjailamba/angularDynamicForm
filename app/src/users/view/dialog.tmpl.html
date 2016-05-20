@@ -180,6 +180,23 @@
         </md-content>
       </md-tab>
 
+      <md-tab label="FileUpload">
+        <md-content class="md-padding">
+
+          <div ng-controller="FormController7">
+              <form name="myForm7"
+                    sf-schema="schema"
+                    sf-form="form"
+                    sf-model="model7"
+                    ng-submit="onSubmit(myForm7)"></form>
+              <div ng-show="myForm7.$valid" class=""><em>Form is valid</em></div>
+              <div ng-show="myForm7.$invalid" class="ng-hide"><em>Form is not valid</em></div>
+              <pre >{{model7}}</pre>
+          </div>
+        </md-content>
+      </md-tab>
+
+
     </md-tabs>
   </md-dialog-content>
   <md-dialog-actions>
