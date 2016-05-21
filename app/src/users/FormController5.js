@@ -8,20 +8,29 @@ function FormController5($scope) {
                   "select": {
                     "title": "Select without titleMap",
                     "type": "string",
+                    "tooltip":"Fdfd",
                     "enum": [
-                      "a",
-                      "b",
+                      "हिंदी",
+                      "हिंदी",
                       "c"
-                    ]
+                    ],
+                    // "minLength": 10,
+                    // "default":"a",
+                    // "default":"None",
+                    "pattern": "^(?!None$)",
+                    "validationMessage": "No option is selected!"
+
                   },
                   "select2": {
-                    "title": "Select with titleMap (old style)",
+                    "title": "Select with हिंदी (old style)",
                     "type": "string",
                     "enum": [
                       "a",
                       "b",
                       "c"
-                    ]
+                    ],
+                    "validationMessage": "Don't be greedy!"
+
                   },
                   "noenum": {
                     "type": "string",
@@ -68,8 +77,12 @@ function FormController5($scope) {
                     "title": "Radio buttons used to switch a boolean",
                     "type": "boolean",
                     "default": false
-                  }
+                  },
+                  "required": [
+                    "select2","select","noenum"
+                  ]
                 }
+
               }  ;
 
   $scope.form =
@@ -79,8 +92,8 @@ function FormController5($scope) {
                     "key": "select2",
                     "type": "select",
                     "titleMap": {
-                      "a": "A",
-                      "b": "B",
+                      "हिंदी": "हिंदी",
+                      "हिंदी": "हिंदी",
                       "c": "C"
                     }
                   },

@@ -33,10 +33,13 @@
   <body ng-app="starterApp" layout="column" ng-cloak>
 
       <div ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak>
+
         <md-content class="md-padding">
           <p>
             Click the button below to open the dialog with an autocomplete.
           </p>
+          <button tooltip-placement="top" uib-tooltip="On the xxxx" type="button" class="btn btn-default">Tooltip top</button>
+
           <md-button ng-click="ctrl.openDialog($event)" class="md-raised">Open Dialog</md-button>
         </md-content>
       </div>
@@ -62,6 +65,8 @@
 
     <script type="text/javascript" src="../bower_components/ng-file-upload/ng-file-upload-all.js"></script>
     <script type="text/javascript" src="../bower_components/angular-schema-form-nwp-file-upload/dist/schema-form-file.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
 
 
     <script src="./src/users/Users.js"></script>
